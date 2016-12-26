@@ -1,4 +1,4 @@
-# Just a simple spring application
+# Simple spring application for maintaining Transaction in memory
  
 ## Request
 
