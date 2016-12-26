@@ -1,10 +1,10 @@
-package com.number26.transactions.controller;
+package com.transactions.controller;
 
 import com.google.common.collect.Maps;
-import com.number26.transactions.Application;
-import com.number26.transactions.mapper.TransactionMapper;
-import com.number26.transactions.model.Transaction;
-import com.number26.transactions.service.TransactionService;
+import com.transactions.Application;
+import com.transactions.mapper.TransactionMapper;
+import com.transactions.model.Transaction;
+import com.transactions.service.TransactionService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,9 +1,9 @@
-package com.number26.transactions.controller.error;
+package com.transactions.controller.error;
 
-import com.number26.transactions.dto.error.ErrorResponseDto;
-import com.number26.transactions.error.DuplicateTransactionException;
-import com.number26.transactions.error.ParentNotFoundException;
-import com.number26.transactions.error.TransactionNotFoundException;
+import com.transactions.dto.error.ErrorResponseDto;
+import com.transactions.error.DuplicateTransactionException;
+import com.transactions.error.ParentNotFoundException;
+import com.transactions.error.TransactionNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

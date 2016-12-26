@@ -1,4 +1,4 @@
-package com.number26.transactions.dto.error;
+package com.transactions.dto.error;
 
 public class ErrorResponseDto
 {

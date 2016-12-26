@@ -1,10 +1,10 @@
-package com.number26.transactions.service;
+package com.transactions.service;
 
 import com.google.common.collect.Maps;
-import com.number26.transactions.error.DuplicateTransactionException;
-import com.number26.transactions.error.ParentNotFoundException;
-import com.number26.transactions.error.TransactionNotFoundException;
-import com.number26.transactions.model.Transaction;
+import com.transactions.error.DuplicateTransactionException;
+import com.transactions.error.ParentNotFoundException;
+import com.transactions.error.TransactionNotFoundException;
+import com.transactions.model.Transaction;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -14,10 +14,7 @@ import java.util.Map;
 import static java.util.stream.Collectors.*;
 
 /**
- * Transaction Service, handles all transaction related work.
- *
- * Currently Transactions are saved in Map.
- * In DB (maybe): Use NO SQL -> Graph DB -> Neo4j.
+ * Transaction Service, handles all transaction.
  * */
 @Service
 public class TransactionService
@@ -51,14 +48,6 @@ public class TransactionService
         return transaction;
     }
 
-    /**
-     * Runtime: O(n),
-     * would like to do it in better run time,
-     * but do not want to over complicate,
-     * O(n) is not bad to start with.
-     * Improve if start getting slow.
-     * Maybe another data-storage.
-     */
     public List<Transaction> getTransactions(String type)
     {
         return transactions.values()

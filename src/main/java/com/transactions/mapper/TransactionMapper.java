@@ -1,7 +1,7 @@
-package com.number26.transactions.mapper;
+package com.transactions.mapper;
 
-import com.number26.transactions.dto.TransactionDto;
-import com.number26.transactions.model.Transaction;
+import com.transactions.dto.TransactionDto;
+import com.transactions.model.Transaction;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.number26.transactions.dto;
+package com.transactions.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -15,5 +15,4 @@ public class TransactionDto
     public String type;
 
     public Long parentId;
-
 }

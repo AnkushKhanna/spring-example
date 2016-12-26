@@ -1,4 +1,4 @@
-package com.number26.transactions.model;
+package com.transactions.model;
 
 import com.google.common.collect.Lists;
 

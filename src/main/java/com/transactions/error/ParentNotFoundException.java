@@ -1,4 +1,4 @@
-package com.number26.transactions.error;
+package com.transactions.error;
 
 public class ParentNotFoundException extends RuntimeException
 {

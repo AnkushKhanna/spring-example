@@ -1,8 +1,8 @@
-package com.number26.transactions.controller;
+package com.transactions.controller;
 
-import com.number26.transactions.dto.TransactionDto;
-import com.number26.transactions.mapper.TransactionMapper;
-import com.number26.transactions.service.TransactionService;
+import com.transactions.dto.TransactionDto;
+import com.transactions.mapper.TransactionMapper;
+import com.transactions.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -19,7 +19,7 @@ import java.util.List;
 import static java.util.stream.Collectors.*;
 
 @RestController
-@RequestMapping(value = "/transactionservice")
+@RequestMapping(value = "/transaction")
 public class TransactionController
 {
     @Autowired
@@ -29,9 +29,9 @@ public class TransactionController
     private TransactionMapper mapper;
 
     @ResponseStatus(value = HttpStatus.CREATED)
-    @RequestMapping(value = "/transaction/{transactionId}",
+    @RequestMapping(value = "/{transactionId}",
         method = RequestMethod.PUT,
-        consumes = MediaType.APPLICATION_JSON_VALUE)
+        consumes = MediaType.ALL_VALUE)
     public void create(
         @PathVariable("transactionId") Long transactionId, @Valid @RequestBody TransactionDto dto
     ) throws Exception
@@ -40,7 +40,7 @@ public class TransactionController
     }
 
     @ResponseStatus(value = HttpStatus.OK)
-    @RequestMapping(value = "/transaction/{transactionId}",
+    @RequestMapping(value = "/{transactionId}",
         method = RequestMethod.GET,
         consumes = MediaType.ALL_VALUE)
     public TransactionDto get(@PathVariable("transactionId") Long transactionId) throws Exception

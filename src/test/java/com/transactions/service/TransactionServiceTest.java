@@ -1,9 +1,9 @@
-package com.number26.transactions.service;
+package com.transactions.service;
 
 import com.google.common.collect.Lists;
-import com.number26.transactions.error.ParentNotFoundException;
-import com.number26.transactions.error.TransactionNotFoundException;
-import com.number26.transactions.model.Transaction;
+import com.transactions.error.ParentNotFoundException;
+import com.transactions.error.TransactionNotFoundException;
+import com.transactions.model.Transaction;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
