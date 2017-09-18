@@ -1,4 +1,4 @@
-# Simple spring application for maintaining Transaction in memory
+# Spring example for maintaining Transaction in memory
  
 ## Request
 
