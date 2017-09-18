@@ -1,6 +1,6 @@
 # Spring example for maintaining Transaction in memory
- 
-## Request
+
+## Featues provided:
 
 ### Add transaction:
 ```
