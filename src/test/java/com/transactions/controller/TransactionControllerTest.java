@@ -52,7 +52,7 @@ public class TransactionControllerTest
     public void get_status_not_found_when_transaction_does_not_exists() throws Exception
     {
         mvc
-            .perform(get("/transactionservice/transaction/11")).andExpect(status().isNotFound());
+            .perform(get("/transaction/11")).andExpect(status().isNotFound());
     }
 
     @Test
@@ -67,7 +67,7 @@ public class TransactionControllerTest
         transactionService.add(t);
 
         mvc
-            .perform(get("/transactionservice/transaction/11")).andExpect(status().isOk());
+            .perform(get("/transaction/11")).andExpect(status().isOk());
     }
 
     @Test
@@ -75,7 +75,7 @@ public class TransactionControllerTest
     {
         mvc
             .perform(
-                put("/transactionservice/transaction/18")
+                put("/transaction/18")
                     .content("{\"amount\":5000,\"type\":\"cars\"}").contentType(MediaType.APPLICATION_JSON)
             )
             .andExpect(status().isCreated());
@@ -94,7 +94,7 @@ public class TransactionControllerTest
 
         mvc
             .perform(
-                put("/transactionservice/transaction/11")
+                put("/transaction/11")
                     .content("{\"amount\":5000,\"type\":\"cars\"}").contentType(MediaType.APPLICATION_JSON)
             )
             .andExpect(status().isConflict());
@@ -112,7 +112,7 @@ public class TransactionControllerTest
         transactionService.add(t);
 
         MvcResult mvcResult = mvc
-            .perform(get("/transactionservice/types/string"))
+            .perform(get("/transaction/types/string"))
             .andExpect(status().isOk()).andReturn();
 
         assertEquals("[11]", mvcResult.getResponse().getContentAsString());
@@ -137,7 +137,7 @@ public class TransactionControllerTest
         transactionService.add(t2);
 
         MvcResult mvcResult = mvc
-            .perform(get("/transactionservice/types/string"))
+            .perform(get("/transaction/types/string"))
             .andExpect(status().isOk()).andReturn();
 
         assertEquals("[11,12]", mvcResult.getResponse().getContentAsString());
@@ -155,7 +155,7 @@ public class TransactionControllerTest
         transactionService.add(t);
 
         MvcResult mvcResult = mvc
-            .perform(get("/transactionservice/types/long"))
+            .perform(get("/transaction/types/long"))
             .andExpect(status().isOk()).andReturn();
 
         assertEquals("[]", mvcResult.getResponse().getContentAsString());
@@ -173,7 +173,7 @@ public class TransactionControllerTest
         transactionService.add(t);
 
         MvcResult mvcResult = mvc
-            .perform(get("/transactionservice/sum/11"))
+            .perform(get("/transaction/sum/11"))
             .andExpect(status().isOk()).andReturn();
 
         assertEquals("41.0", mvcResult.getResponse().getContentAsString());
@@ -183,7 +183,7 @@ public class TransactionControllerTest
     public void get_sum_return_NOT_FOUND_sum_with_one_transaction() throws Exception
     {
         mvc
-            .perform(get("/transactionservice/sum/11"))
+            .perform(get("/transaction/sum/11"))
             .andExpect(status().isNotFound());
     }
 
@@ -207,7 +207,7 @@ public class TransactionControllerTest
         transactionService.add(t2);
 
         MvcResult mvcResult = mvc
-            .perform(get("/transactionservice/sum/11"))
+            .perform(get("/transaction/sum/11"))
             .andExpect(status().isOk()).andReturn();
 
         assertEquals("131.0", mvcResult.getResponse().getContentAsString());
